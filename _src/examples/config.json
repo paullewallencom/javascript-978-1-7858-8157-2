@@ -1,0 +1,635 @@
+[
+  {
+    "title": "Chapter 1. Diving into JavaScript core",
+    "dir": "01",
+    "children": [
+      {
+        "title": "Make your code readable and expressive",
+        "dir": "01/01",
+        "children": [
+          { "file": "01.js", "es": 5 },
+          { "file": "02.js", "es": 5 },
+          { "file": "03.js", "es": 5 },
+          { "file": "04.js", "es": 5 },
+          { "file": "05.js", "es": 5 },
+          { "file": "06.js", "es": 5 },
+          { "file": "07.js", "es": 6 },
+          { "file": "08.js", "es": 6 },
+          { "file": "09.js", "es": 5 },
+          { "file": "10.js", "es": 6 },
+          { "file": "11.js", "es": 6 },
+          { "file": "12.js", "es": 6 }
+        ]
+      },
+
+      {
+        "title": "Mastering multi-line strings in JavaScript",
+        "dir": "01/02",
+        "children": [
+          { "file": "01.js", "es": 5 },
+          { "file": "02.js", "es": 5 },
+          { "file": "03.js", "es": 5 },
+          { "file": "04.js", "es": 6 },
+          { "file": "05.js", "es": 6 }
+        ]
+      },
+
+      {
+        "title": "Manipulating arrays ES5 way",
+        "dir": "01/03",
+        "children": [
+          { "file": "01.js", "es": 5 },
+          { "file": "02.js", "es": 5 },
+          { "file": "03.js", "es": 5 },
+          { "file": "04.js", "es": 5 },
+          { "file": "05.js", "es": 5 },
+          { "file": "06.js", "es": 6 },
+          { "file": "07.js", "es": 6 },
+          { "file": "08.js", "es": 6 },
+          { "file": "09.js", "es": 6 }
+        ]
+      },
+
+      {
+        "title": "Traversing an object: elegant, reliable, safe and fast",
+        "dir": "01/04",
+        "children": [
+          { "file": "01.js", "es": 5 },
+          { "file": "02.js", "es": 5 },
+          { "file": "03.js", "es": 5 },
+          { "file": "04.js", "es": 5 },
+          { "file": "05.js", "es": 5 },
+          { "file": "06.js", "es": 6 },
+          { "file": "07.js", "es": 6 },
+          { "file": "08.js", "es": 6 },
+          { "file": "09.js", "es": 6 }
+        ]
+      },
+
+      {
+        "title": "Most effective way of declaring objects",
+        "dir": "01/05",
+        "children": [
+          { "file": "01.js", "es": 5 },
+          { "file": "02.js", "es": 5 },
+          { "file": "03.js", "es": 5 },
+          { "file": "04.js", "es": 5 },
+          { "file": "05.js", "es": 5 },
+          { "file": "06.js", "es": 5 },
+          { "file": "07.js", "es": 5 },
+          { "file": "08.js", "es": 5, "requires": "lib/ExtendClass.js" },
+          { "file": "09.js", "es": 6 },
+          { "file": "10.js", "es": 6 }
+        ]
+      },
+
+      {
+        "title": "How to: magic methods in JavaScript",
+        "dir": "01/06",
+        "children": [
+          { "file": "01.js", "es": 5 },
+          { "file": "02.js", "es": 5 },
+          { "file": "03.js", "es": 5 },
+          { "file": "04.js", "es": 6 },
+          { "file": "05.js", "es": 6 },
+          { "file": "06.js", "es": 6 }
+        ]
+      }
+
+
+
+
+    ]
+  },
+  {
+    "title": "Chapter 2. Modular programming with JavaScript",
+    "dir": "02",
+    "children": [
+      {
+        "title": "How to get out of a mess: modular JavaScript",
+        "dir": "02/01",
+        "children": [
+          { "file": "01.js", "run":  false  },
+          { "file": "02.js", "run":  false  },
+          { "file": "03.js", "run":  false  },
+          { "file": "04.js", "es": 5 },
+          { "file": "05.js", "es": 5 }
+        ]
+      },
+      {
+        "title": "How to: asynchronous modules in the browser",
+        "dir": "02/02",
+        "children": [
+          {
+            "file": "01",
+            "children": [
+              { "file": "01/foo.js" },
+              { "file": "01/main.js" },
+              { "file": "01/index.html" }
+            ]
+          },
+          {
+            "file": "02",
+            "children": [
+              { "file": "02/foo.js" },
+              { "file": "02/main.js" },
+              { "file": "02/index.html" }
+            ]
+          },
+          {
+            "file": "03",
+            "children": [
+              { "file": "03/bar.js" },
+              { "file": "03/baz.js" },
+              { "file": "03/foo.js" },
+              { "file": "03/main.js" },
+              { "file": "03/index.html" }
+            ]
+          },
+          {
+            "file": "04",
+            "children": [
+              { "file": "04/foo.js" },
+              { "file": "04/main.js" },
+              { "file": "04/index.html" }
+            ]
+          }
+        ]
+      },
+       {
+        "title": "How to: synchronous modules on the server",
+        "dir": "02/02",
+        "children": [
+          {
+            "file": "05",
+            "children": [
+              { "file": "05/foo.js" },
+              { "file": "05/main.js" },
+              { "file": "05/run.sh" }
+            ]
+          },
+          {
+            "file": "06",
+            "children": [
+              { "file": "06/foo.js" },
+              { "file": "06/main.js" },
+              { "file": "06/run.sh" }
+            ]
+          },
+          {
+            "file": "07",
+            "children": [
+              { "file": "07/foo.js" },
+              { "file": "07/main.js" },
+              { "file": "07/run.sh" }
+            ]
+          },
+          {
+            "file": "08",
+            "children": [
+              { "file": "08/foo.js" },
+              { "file": "08/main.js" },
+              { "file": "08/run.sh" }
+            ]
+          },
+          {
+            "file": "09",
+            "children": [
+              { "file": "09/foo.js" },
+              { "file": "09/main.js" },
+              { "file": "09/run.sh" }
+            ]
+          },
+          {
+            "file": "10",
+            "children": [
+              { "file": "10/bar.js" },
+              { "file": "10/baz.js" },
+              { "file": "10/foo.js" },
+              { "file": "10/main.js" },
+              { "file": "10/run.sh" }
+            ]
+          }
+            ]
+        },
+       {
+        "title": "Coming soon: JavaScript built-in module system",
+        "dir": "02/02",
+        "children": [
+          {
+            "file": "11",
+            "children": [
+              { "file": "11/foo.es6" },
+              { "file": "11/main.es6" },
+              { "file": "11/run.sh" },
+              { "file": "11/amd.html" }
+            ]
+          },
+          {
+            "file": "12",
+            "children": [
+              { "file": "12/foo.es6" },
+              { "file": "12/main.es6" },
+              { "file": "12/run.sh" }
+            ]
+          },
+          {
+            "file": "13",
+            "children": [
+              { "file": "13/foo.es6" },
+              { "file": "13/main.es6" },
+              { "file": "13/run.sh" }
+            ]
+          },
+          {
+            "file": "14",
+            "children": [
+              { "file": "14/foo.es6" },
+              { "file": "14/main.es6" },
+              { "file": "14/run.sh" }
+            ]
+          }
+          ]
+        },
+       {
+        "title": "Traspiling CommonJS for in-browser use",
+        "dir": "02/02",
+        "children": [
+          {
+            "file": "15",
+            "children": [
+              { "file": "15/bar.js" },
+              { "file": "15/foo.js" },
+              { "file": "15/main.js" },
+              { "file": "15/run.sh" }
+            ]
+          },
+          {
+            "file": "16",
+            "children": [
+              { "file": "16/bar.js" },
+              { "file": "16/foo.js" },
+              { "file": "16/test.js" }
+            ]
+          },
+          {
+            "file": "17",
+            "children": [
+              { "file": "17/js/src/bar.js" },
+              { "file": "17/js/src/foo.js" },
+              { "file": "17/js/src/main.js" },
+              { "file": "17/Gruntfile.js" },
+              { "file": "17/package.json" }
+            ]
+          },
+          {
+            "file": "18",
+            "children": [
+              { "file": "18/js/src/bar.js" },
+              { "file": "18/js/src/foo.js" },
+              { "file": "18/js/src/main.js" },
+              { "file": "18/Gruntfile.js" },
+              { "file": "18/package.json" }
+            ]
+          },
+          {
+            "file": "19",
+            "children": [
+              { "file": "19/Gruntfile.js" },
+              { "file": "19/cjsc-conig.json" }
+            ]
+          }
+          ]
+        },
+       {
+        "title": "Bundling ES6 modules for synchronous loading by now",
+        "dir": "02/02",
+        "children": [
+          {
+            "file": "20",
+            "children": [
+              { "file": "20/foo.es6" },
+              { "file": "20/main.es6" },
+              { "file": "20/run.sh" },
+              { "file": "20/index.html" }
+            ]
+          }
+
+
+        ]
+      }
+    ]
+  },
+
+  {
+    "title": "Chapter 3. DOM Scripting and AJAX",
+    "dir": "03",
+    "children": [
+      {
+        "title": "High-speed DOM operations",
+        "dir": "03/01",
+        "children": [
+          { "file": "01.html", "run":  false },
+          { "file": "02.html", "run":  false },
+          { "file": "03.html", "run":  false },
+          { "file": "04.js", "run":  false },
+          { "file": "05.es6", "run":  false },
+          { "file": "06.js", "run":  false },
+          { "file": "07.js", "run":  false },
+          { "file": "08.js", "run":  false },
+          { "file": "09.js", "run":  false },
+          { "file": "10.js", "run":  false },
+          { "file": "11.js", "run":  false },
+          { "file": "12.js", "run":  false },
+          { "file": "13.js", "run":  false },
+          { "file": "14.js", "run":  false },
+          { "file": "15.js", "run":  false },
+          { "file": "16.js", "run":  false },
+          { "file": "17.js", "run":  false },
+          { "file": "18.html", "run":  false },
+          { "file": "19.js", "run":  false },
+          { "file": "20.js", "run":  false },
+          { "file": "21.js", "run":  false },
+          { "file": "22.js", "run":  false },
+          { "file": "23.js", "run":  false },
+          { "file": "24.html", "run":  false },
+          { "file": "25.js", "run":  false },
+          { "file": "26.js", "run":  false },
+          { "file": "27.js", "run":  false },
+          { "file": "28.js", "run":  false },
+          { "file": "29.js", "run":  false }
+
+        ]
+      },
+      {
+        "title": "Communication  with the server",
+        "dir": "03/02",
+        "children": [
+          { "file": "01.js", "run":  false },
+          { "file": "04.js", "run":  false },
+          { "file": "07.js", "run":  false },
+          { "file": "08.js", "run":  false },
+          { "file": "09.js", "run":  false },
+          { "file": "10.js", "run":  false },
+          { "file": "11.js", "run":  false }
+
+        ]
+      }
+    ]
+   },
+
+  {
+    "title": "Chapter 4. HTML5 APIs",
+    "dir": "04",
+    "children": [
+      {
+        "title": "Storing data in web-browser",
+        "dir": "04/01",
+        "children": [
+          { "file": "01.js", "run":  false },
+          { "file": "02.js", "run":  false },
+          { "file": "03.js", "run":  false },
+          { "file": "04.html", "run":  false },
+          { "file": "05.js" },
+          { "file": "06.js", "requires":  "lib/Dexie.js" },
+          { "file": "07.es6", "run":  false }
+        ]
+      },
+      {
+        "title": "Boosting performance with JavaScript Workers",
+        "dir": "04/02",
+        "children": [
+          { "file": "01",
+            "children": [
+              { "file": "01/index.html" },
+              { "file": "01/foo-worker.js" }
+            ]
+          },
+          { "file": "02",
+            "children": [
+              { "file": "02/index.html" },
+              { "file": "02/bar-worker.js" }
+            ]
+          },
+          { "file": "03.html", "run":  false }
+        ]
+      },
+      {
+        "title": "Creating our first web component",
+        "dir": "04/03",
+        "children": [
+          { "file": "01", "children": [
+              { "file": "01/index.html" },
+              { "file": "01/x-details.html" }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Learning to use server-to-browser communication channels",
+        "dir": "04/04",
+        "children": [
+          { "file": "01", "children": [
+              { "file": "01/example.js" },
+              { "file": "01/sse-server.php" }
+            ]
+          },
+          { "file": "02.js", "run": false },
+          { "file": "03", "children": [
+              { "file": "03/demo.html" },
+              { "file": "03/ws.js" }
+            ]
+          }
+        ]
+      }
+    ]
+   },
+
+  {
+    "title": "Chapter 5. Asynchronous JavaScript ",
+    "dir": "05",
+    "children": [
+      {
+        "title": "Non-blocking JavaScript",
+        "dir": "05/01",
+        "children": [
+          { "file": "01.js" },
+          { "file": "02.js" },
+          { "file": "03.js", "run":  false },
+          { "file": "04.js" },
+          { "file": "05.js" },
+          { "file": "06.js" },
+          { "file": "07.js", "run":  false }
+
+        ]
+      },
+      {
+        "title": "Error First Callback",
+        "dir": "05/02",
+        "children": [
+          { "file": "01.js", "run":  false }
+        ]
+      },
+      {
+        "title": "Continuation-passing style",
+        "dir": "05/03",
+        "children": [
+          { "file": "01.js" },
+          { "file": "02.js" },
+          { "file": "03.js" },
+          { "file": "04.js" }
+        ]
+      },
+      {
+        "title": "Asynchronous functions ES7 way",
+        "dir": "05/04",
+        "children": [
+          { "file": "01.es6", "run":  false }
+        ]
+      },
+      {
+        "title": "Parallel tasks and task serious with Async.js library",
+        "dir": "05/05",
+        "children": [
+          { "file": "01.js", "requires": "lib/async.js" },
+          { "file": "02.js", "requires": "lib/async.js" }
+        ]
+      },
+      {
+        "title": "Event Handling Optimization",
+        "dir": "05/06",
+        "children": [
+          { "file": "01.js", "run":  false },
+          { "file": "02.js", "run":  false }
+        ]
+      }
+
+
+
+    ]
+   },
+
+
+  {
+    "title": "Chapter 6. Large-Scale JavaScript Application Architecture",
+    "dir": "06",
+    "children": [
+      {
+        "title": "Design patterns in JavaScript",
+        "dir": "06/01",
+        "children": [
+          { "file": "01",
+            "children": [
+              { "file": "01/example.es6" },
+              { "file": "01/mediator.es6" }
+            ]},
+          { "file": "02.es6", "run":  false }
+
+        ]
+      },
+      {
+        "title": "Using JavaScript MV* Frameworks",
+        "dir": "06/03",
+        "children": [
+          { "file": "Backbone",
+            "children": [
+              { "file": "Backbone/index.html" },
+              { "file": "Backbone/js/model/ContactSearch.js" },
+              { "file": "Backbone/js/view/ContactSearch.js" }
+            ]},
+          { "file": "Angular.html", "run":  false },
+          { "file": "React",
+            "children": [
+              { "file": "React/index.html" },
+              { "file": "React/js/model/ContactSearch.js" }
+            ]}
+
+        ]
+      }
+
+    ]
+  },
+
+  {
+    "title": "Chapter 7. JavaScript Beyond the Browser ",
+    "dir": "07",
+    "children": [
+      {
+        "title": "Getting the best from console API",
+        "dir": "07/01",
+        "children": [
+          { "file": "01.js" },
+          { "file": "02",
+           "children": [
+              { "file": "02/foo.js" },
+              { "file": "02/main.js" }
+            ]
+          },
+          { "file": "03.js", "run":  false },
+          { "file": "04",
+           "children": [
+              { "file": "04/Lib/BlockComment.js" },
+              { "file": "04/Lib/SourceFile.js" },
+              { "file": "04/copyright-checker.js" },
+              { "file": "04/package.json" },
+              { "file": "04/tests/blockComment.js" },
+              { "file": "04/tests/sourceFile.js" }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building a web-server with JavaScript",
+        "dir": "07/02",
+        "children": [
+          { "file": "01.js", "run":  false  },
+          { "file": "02.js", "run":  false  }
+        ]
+      },
+      {
+        "title": "Writing a desktop HTML5 application now easier!",
+        "dir": "07/03",
+        "children": [
+          { "file": "01",
+           "children": [
+              { "file": "01/package.json" },
+              { "file": "01/wwwroot/index.html" }
+            ]
+          },
+          { "file": "02",
+           "children": [
+              { "file": "02/package.json" },
+              { "file": "02/wwwroot/index.html" },
+              { "file": "02/wwwroot/assets/styles.css" }
+            ]
+          },
+          { "file": "03.js", "run":  false  },
+          { "file": "04.js", "run":  false  }
+        ]
+      }
+    ]
+   },
+
+
+  {
+    "title": "Chapter 8. Debugging and profiling",
+    "dir": "08",
+    "children": [
+      {
+        "title": "Getting the best from console API",
+        "dir": "08/01",
+        "children": [
+          { "file": "01.js", "run":  false },
+          { "file": "02.js", "run":  false },
+          { "file": "03.js", "run":  false },
+          { "file": "04.js", "run":  false }
+
+        ]
+      }
+    ]
+   }
+
+
+
+
+]

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+* Async/Await API example
+*/
+// Fetch a random joke
+function fetchQuote() {
+  return fetch( "http://api.icndb.com/jokes/random" )
+  .then(function( resp ){
+    return resp.json();
+  }).then(function( data ){
+    return data.value.joke;
+  });
+}
+// Report either a fetched joke or error
+async function sayJoke()
+{
+  try {
+    let result = await fetchQuote();
+    console.log( "Joke:", result );
+  } catch( err ) {
+    console.error( err );
+  }
+}
+sayJoke();</script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<style>
+  input {
+    border-radius: 5px;
+    display: block;
+    font-size: 14px;
+    border: 1px solid grey;
+    margin: 3px 0;
+  }
+  button {
+    border-radius: 5px;
+    font-size: 14px;
+    background: #189ac4;
+    color: white;
+    border: none;
+    padding: 3px 14px;
+  }
+</style>
+
+<form data-bind="chat">
+  <input data-bind="whoami" placeholder="Enter your name">
+  <input data-bind="text" placeholder="Enter your msg" />
+  <button type="submit">Send</button>
+</form>
+<h3>Chat:</h3>
+<output data-bind="output">
+</output>
+<script>
+
+var whoami = document.querySelector( "[data-bind=\"whoami\"]" ),
+    text = document.querySelector( "[data-bind=\"text\"]" ),
+    chat = document.querySelector( "[data-bind=\"chat\"]" ),
+    output = document.querySelector( "[data-bind=\"output\"]" ),
+    // create ws connection
+    rtm = new WebSocket("ws://localhost:8001");
+
+rtm.onmessage = function( e ){
+  var data = JSON.parse( e.data );
+  output.innerHTML += data.whoami + " says: " + data.text + "<br />";
+};
+rtm.onerror = function( e ){
+  console.error( "Error: " + e.message );
+};
+
+chat.addEventListener( "submit", function( e ){
+  e.preventDefault();
+  if ( !whoami.value ) {
+    return alert( "You have enter your name" );
+  }
+  if ( !text.value ) {
+    return alert( "You have enter some text" );
+  }
+  rtm.send(JSON.stringify({
+    whoami: whoami.value,
+    text: text.value
+  }));
+});
+
+</script>

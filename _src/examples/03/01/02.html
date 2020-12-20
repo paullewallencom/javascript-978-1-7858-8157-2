@@ -1,0 +1,9 @@
+<!-- Accessing DOM #2 -->
+<article data-bind="bar">
+  <h2 data-bind="heading">Lorem ipsum</h2>
+</article>
+
+<script>
+var article = document.querySelector( "[data-bind=\"bar\"]" ),
+    heading = article.querySelector( "[data-bind=\"heading\"]" );
+</script>

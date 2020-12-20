@@ -1,0 +1,15 @@
+{
+  "name": "got-chars",
+  "main": "wwwroot/index.html",
+  "window": {
+    "title": "GoT characters",
+    "icon": "wwwroot/img/warface64.png",
+    "position": "center",
+    "resizable": false,
+    "toolbar": false,
+    "frame": false,
+    "focus": true,
+    "min_width": 934,
+    "min_height": 700
+  }
+}

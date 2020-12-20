@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * ajax module 
+ */
+var ajax = {
+  /**
+   * Get request alias
+   */
+  get: function(){
+    var args = [].slice.call( arguments );
+    return this.fetch.apply( this, [ "GET" ].concat( args ) );
+  },
+  /**
+   * Post request alias
+   */
+  post: function(){
+    var args = [].slice.call( arguments );
+    return this.fetch.apply( this, [ "POST" ].concat( args ) );
+  },
+  /**
+   * Perform XHR
+   * @param {String} method - GET/POST
+   * @param {String} path
+   * @param {Map} data
+   * @param {Map} options
+   */
+  fetch: function( method, path, data, options ) {
+
+
+    options = options || {};
+    options.timeout = options.timeout || 4000;
+
+    return new Promise(function( resolve, reject ) {
+      var xhr = new window.XMLHttpRequest(),
+          params = data ? Object.keys( data ).map(function( key ){
+            return key + "=" + window.encodeURIComponent( data[ key ] );
+          }).join( "&" ) : "",
+          suffix = "";
+
+      // Get from the cache
+      if ( options.cache && options.cache.getItem( path + "?" + params ) ) {
+        return resolve( options.cache.getItem( path + "?" + params ) );
+      }
+      xhr.addEventListener( "load", function() {
+        if ( this.status >= 200 && this.status < 400 ) {
+           // Store to the cache
+          options.cache && options.cache.setItem( path + "?" + params, this.response );
+          return resolve( this.response );
+        }
+        reject( new Error( "Bad request" ) );
+      }, false );
+
+      xhr.addEventListener( "error", reject, false );
+
+      xhr.addEventListener( "timeout", function() {
+        reject( new Error( "Timeout error" ) );
+      }, false );
+
+      // Force CDN to give the actual content
+      if ( options.bypasscdn && method === "GET" ) {
+        suffix = ( params ? "&" : "?" ) + "ts=" + ( 1 * new Date() );
+      }
+
+      xhr.open( method, method === "GET" ? path + ( params ? "?" + params : "" ) + suffix :
+        path, true );
+      xhr.responseType = "json";
+      xhr.timeout = options.timeout;
+      xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+      xhr.send( method !== "GET" ? params : null );
+    });
+  }
+};</script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+
+<script src="node_modules/babel-core/browser-polyfill.js"></script>
+<script src="node_modules/babel-core/browser.js"></script>
+<script type="text/babel">
+
+"use strict";
+
+// Fetch a random joke
+function fetchQuote() {
+  return fetch( "http://api.icndb.com/jokes/random" ).then(function( resp ){
+    return resp.json();
+  }).then(function( data ){
+    return data.value.joke;
+  });
+}
+
+async function sayJoke()
+{
+  try {
+    let result = await fetchQuote();
+    console.log( "Joke:", result );
+  } catch( err ) {
+
+  }
+}
+sayJoke();
+</script>
+
+

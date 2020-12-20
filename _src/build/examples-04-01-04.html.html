@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script><html>
+  <head>
+    <title>Web Storage</title>
+  </head>
+  <body>
+    <div>
+      <button data-bind="btn">Add to cart</button>
+      <button data-bind="reset">Reset</button>
+    </div>
+    <output data-bind="output">
+
+    </output>
+    <script>
+
+    var output = document.querySelector( "[data-bind=\"output\"]" ),
+        btn = document.querySelector( "[data-bind=\"btn\"]" ),
+        reset = document.querySelector( "[data-bind=\"reset\"]" ),
+        storage = localStorage,
+       /**
+        * Read from the storage
+        * @return {Arrays}
+        */
+        get = function(){
+           return JSON.parse( storage.getItem( "cart" ) ) || [];
+        },
+        /**
+         * Append an item to the cart
+         * @param {Object} product
+         */
+        append = function( product ) {
+          var data = get();
+          data.push( product );
+          storage.setItem( "cart", JSON.stringify( data ) );
+        },
+        /** Re-render list of items */
+        updateView = function(){
+          var data = get();
+          output.innerHTML = "";
+          data && data.forEach(function( item ){
+            output.innerHTML += [ "id: ", item.id, "<br />" ].join( "" );
+          });
+        };
+
+    this.btn.addEventListener( "click", function(){
+      append({ id: Math.floor(( Math.random() * 100 ) + 1 ) });
+      updateView();
+    }, false );
+
+    this.reset.addEventListener( "click", function(){
+      storage.clear();
+      updateView();
+    }, false );
+
+    // Update item list when a new item is added in another window/tab
+    window.addEventListener( "storage", updateView, false );
+
+    updateView();
+
+    </script>
+  </body>
+</html></script>
+    </body>
+</html>

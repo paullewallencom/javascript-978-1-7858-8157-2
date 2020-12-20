@@ -1,0 +1,31 @@
+html {
+ height: 100%;
+ border-radius: 20px;
+}
+body {
+	min-height: 100%;
+	background: linear-gradient(to bottom,  #deefff 0%,#98bede 100%);
+  overflow: auto;
+}
+header {
+	text-align: right;
+	width: auto;
+	padding: 12px;
+	background: rgba(255,255,255, 0.5);
+	border-radius: 20px 20px 0 0;
+	-webkit-app-region: drag;
+}
+header a {
+	margin: 12px;
+	-webkit-app-region: no-drag;
+}
+main {
+	max-width: 500px;
+	padding: 20px;
+}
+td {
+	border-color: white !important;
+}
+td:hover {
+	background: white;
+}

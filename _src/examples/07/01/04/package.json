@@ -1,0 +1,16 @@
+{
+  "name": "copyright-checker",
+  "title": "copyright-checker",
+  "author": "Dmitry Sheiko",
+  "main": "./copyright-checker.js",
+  "dependencies": {
+    "cli-color": "^1.1.0",
+    "esprima": "^2.6.0",
+    "fs-walk": "0.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.2"
+  }
+}

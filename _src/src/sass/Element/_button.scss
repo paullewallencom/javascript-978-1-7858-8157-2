@@ -1,0 +1,17 @@
+.btn {
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent; // reset default button
+  outline: none;
+  border: none;
+  &:not(:last-child) {
+    margin-right: 25px;
+  }
+  &:disabled {
+    opacity: 0.8;
+  }
+}

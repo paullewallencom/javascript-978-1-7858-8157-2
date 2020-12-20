@@ -1,0 +1,38 @@
+.l-desktop {
+  display: flex;
+  flex-flow: row column;
+
+}
+.l-desktop-nav {
+  flex: 1 1 auto;
+  width: 230px;
+  display: inline-block;
+
+  position: relative;
+  background: $c-grey;
+  border-right: 1px solid $c-border;
+  padding-top: 20px;
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.l-desktop-view {
+  flex: 1 1 auto;
+  width: calc(100% - 230px);
+  display: inline-block;
+
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  > .pane-src {
+    flex: 0 1 auto;
+  }
+  > .pane-exec {
+    flex: 2 1 auto;
+  }
+  > .l-desktop-view-actions {
+    flex: 0 1 auto;
+  }
+}

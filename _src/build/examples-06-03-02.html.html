@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script><!DOCTYPE html>
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <style>
+    fieldset { border: 0; }
+    .error-msg{ color: red; }
+  </style>
+  <body>
+   <form ng-app="foo" name="fooForm" ng-submit="submit()" ng-controller="fooController">
+    <fieldset>
+      <label for="email">Email:</label>
+      <input id="email" name="email" ng-model="email" required
+          ng-pattern="/^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$/"  />
+      <span class="error-msg" ng-show="fooForm.email.$dirty && fooForm.email.$invalid">
+        <span ng-show="fooForm.email.$error.required">Email is required.</span>
+        <span ng-show="fooForm.email.$error.pattern">Invalid email address.</span>
+      </span>
+    </fieldset>
+    <fieldset>
+      <button type="submit" ng-disabled="fooForm.user.$dirty && fooForm.user.$invalid ||
+          fooForm.email.$dirty && fooForm.email.$invalid">Submit</button>
+    </fieldset>
+  </form>
+<script>
+  "use strict";
+  angular.module( "foo", [] ).controller( "fooController", [ "$scope", function ( $scope ){
+    $scope.email = "";
+    $scope.submit = function() {
+      alert( "Submitting " + $scope.email );
+    };
+  }]);
+</script>
+  </body>
+</html>
+</script>
+    </body>
+</html>

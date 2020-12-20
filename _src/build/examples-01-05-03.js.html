@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * Declaring object type with private members
+ */
+"use strict";
+ /**
+  * @class
+  */
+ var Constructor = function(){
+      /**
+      * @type {String}
+      * @private
+      */
+      var baz = "baz";
+      return {
+        /**
+        * @type {String}
+        * @public
+        */
+        bar: "bar",
+        /**
+        * @public
+        * @returns {String}
+        */
+        foo: function() {
+         return this.bar + " " + baz;
+        }
+      };
+    },
+    /** @type Constructor */
+    instance = new Constructor();
+
+
+console.log( instance.foo() ); // bar baz
+console.log( instance.hasOwnProperty( "baz") ); // false
+console.log( Constructor.prototype.hasOwnProperty( "baz") ); // false
+console.log( instance instanceof Constructor ); // false</script>
+    </body>
+</html>

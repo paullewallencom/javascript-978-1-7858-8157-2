@@ -1,0 +1,1 @@
+babel --modules common *.es6 --out-dir .

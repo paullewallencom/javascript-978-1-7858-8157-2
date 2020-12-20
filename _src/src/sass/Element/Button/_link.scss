@@ -1,0 +1,15 @@
+.btn-link {
+	height:3.2rem;
+	line-height:3.2rem - 1.4rem;
+	color: $c-black;
+  border: 1px solid $c-black;
+  padding: 5px 16px;
+	min-width:7.2rem;
+	font-size:1.2rem;
+	width: auto;
+  margin: 16px 0;
+  font-weight: bold;
+  &:hover {
+    background: $c-grey-hover-bg;
+  }
+}

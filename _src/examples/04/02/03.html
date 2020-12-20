@@ -1,0 +1,54 @@
+<script data-bind="biTracker" type="text/js-worker">
+  "use strict";
+
+  // Here shall go you BI endpoint
+  const REST_METHOD = "http://www.telize.com/jsonip";
+  /**
+   * @param {Map} data - BI request params
+   * @param {Function} resolve
+   */
+  var call = function( data, resolve ) {
+    var xhr = new XMLHttpRequest(),
+        params = data ? Object.keys( data ).map(function( key ){
+            return key + "=" + encodeURIComponent( data[ key ] );
+          }).join( "&" ) : "";
+
+    xhr.open( "POST", REST_METHOD, true );
+    xhr.addEventListener( "load", function() {
+        if ( this.status >= 200 && this.status < 400 ) {
+          return resolve( this.response );
+        }
+        console.error( "BI tracker - bad request " + this.status );
+      }, false );
+    xhr.addEventListener( "error", console.error, false );
+    xhr.responseType = "json";
+    xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+    xhr.send( params );
+  };
+  /**
+   * Subscribe to window.onmessage event
+   */
+  onmessage = function ( e ) {
+    call( e.data, function( data ){
+      // respond back
+      postMessage( data );
+    })
+  };
+</script>
+
+<script type="text/javascript">
+  "use strict";
+  window.biTracker = (function(){
+    var blob = new Blob([ document.querySelector( "[data-bind=\"biTracker\"]" ).textContent ], {
+          type: "text/javascript"
+        }),
+        worker = new Worker( window.URL.createObjectURL( blob ) );
+
+    worker.onmessage = function ( oEvent ) {
+      console.info( "Bi-Tracker responds: ", oEvent.data );
+    };
+    return worker;
+  }());
+  // Let's test it
+  window.biTracker.postMessage({ page: "#main" });
+</script>

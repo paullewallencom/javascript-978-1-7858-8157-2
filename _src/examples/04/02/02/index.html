@@ -1,0 +1,11 @@
+<script>
+"use strict";
+var worker = new SharedWorker( "bar-worker.js" );
+worker.port.onmessage = function( e ) {
+  console.log( "Worker echoes: ", e.data );
+};
+worker.onerror = function( e ){
+  console.error( "Error:", e.message );
+};
+worker.port.postMessage( "Hello worker" );
+</script>

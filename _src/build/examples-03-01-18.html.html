@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script><!-- Modifying external stylesheets -->
+<style type="text/css">
+.foo {
+ color: red;
+}
+</style>
+<div class="foo">foo</div>
+<script type="text/javascript">
+var stylesheet = document.styleSheets[ 0 ];
+stylesheet.cssRules[ 0 ].style.color = "red";
+// or
+// stylesheet.cssRules[ 0 ].style.cssText = "color: red;";
+</script></script>
+    </body>
+</html>

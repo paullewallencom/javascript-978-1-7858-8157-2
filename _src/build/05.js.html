@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script>/** @module foo */
+var foo = (function () {
+      "use strict";
+           /**
+            * @type {Object}
+            */
+         var foo = {
+             /**
+              * @public
+              * @type {String}
+              */
+             baz: "baz"
+           };
+       return foo;
+    }()),
+    /** @module bar */
+    bar = (function( foo ){
+      "use strict";
+      foo.qux = "qux";
+    }( foo || {} ));
+
+console.log( foo.baz ); // baz
+console.log( foo.qux ); // qux</script>
+    </body>
+</html>

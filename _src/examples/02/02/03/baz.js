@@ -1,0 +1,3 @@
+define({
+  value: "baz"
+});

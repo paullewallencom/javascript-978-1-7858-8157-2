@@ -1,0 +1,11 @@
+<!-- Accessing DOM #3 -->
+<ul data-bind="bar">
+  <li data-bind="item">Lorem ipsum</li>
+  <li data-bind="item">Lorem ipsum</li>
+  <li data-bind="item">Lorem ipsum</li>
+</ul>
+<script>
+var ul = document.querySelector( "[data-bind=\"bar\"]" ),
+      lis = ul.querySelectorAll( "[data-bind=\"item\"]" );
+console.log( lis.length );
+</script>

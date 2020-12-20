@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * Async flow in a wild example
+ */
+"use strict";
+
+require([ "news", "Session", "User", "Ui" ], function ( News, Session, User, Ui ) {
+  var session = new Session(),
+      news = new News(),
+      ui = new Ui({ el: document.querySelector( "[data-bind=ui]" ) });
+  // load news
+ news.load( ui.update );
+ //  authorize user
+ session.authorize(function( token ){
+   var user = new User( token );
+   // load user data
+   user.load(function(){
+     ui.update();
+     // load user profile picture
+     user.loadProfilePicture( ui.update );
+     // load user notifications
+     user.loadNotifications( ui.update );
+   });
+ });
+});</script>
+    </body>
+</html>

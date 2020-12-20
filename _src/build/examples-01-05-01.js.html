@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * Declaring object type inside constructor
+ */
+"use strict";
+ /**
+  * @class
+  */
+var Constructor = function(){
+    /**
+    * @type {String}
+    * @public
+    */
+    this.bar = "bar";
+    /**
+    * @public
+    * @returns {String}
+    */
+    this.foo = function() {
+     return this.bar;
+    };
+  },
+  /** @type Constructor */
+  instance = new Constructor();
+
+console.log( instance.foo() ); // bar
+console.log( instance instanceof Constructor ); // true
+</script>
+    </body>
+</html>

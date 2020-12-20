@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * Inheritance with the prototype chain
+ */
+"use strict";
+  /**
+  * @class
+  */
+ var SuperType = function(){
+        /**
+        * @type {String}
+        * @public
+        */
+        this.foo = "foo";
+      },
+      /**
+       * @class
+       */
+      Constructor = function(){
+        /**
+        * @type {String}
+        * @public
+        */
+        this.bar = "bar";
+      },
+      /** @type Constructor */
+      instance;
+
+  Constructor.prototype = new SuperType();
+  Constructor.prototype.constructor = Constructor;
+
+  instance = new Constructor();
+  console.log( instance.bar ); // bar
+  console.log( instance.foo ); // foo
+  console.log( instance instanceof Constructor ); // true
+  console.log( instance instanceof SuperType ); // true
+</script>
+    </body>
+</html>

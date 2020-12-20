@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>"use strict";
+/**
+ * Make GET request
+ * @param {String} url
+ * @returns {Promise}
+ */
+function ajaxGet( url ) {
+  return new Promise(function( resolve, reject ) {
+    var req = new XMLHttpRequest();
+    req.open( "GET", url );
+    req.onload = function() {
+      // If response status isn't 200 something went wrong
+      if ( req.status !== 200 ) {
+        // Early exit
+        return reject( new Error( req.statusText ) );
+      }
+      // Everything is ok, we can resolve the promise
+      return resolve( JSON.parse( req.responseText ) );
+    };
+    // On network errors
+    req.onerror = function() {
+      reject( new Error( "Network Error" ) );
+    };
+    // Make the request
+    req.send();
+  });
+};
+
+ajaxGet("http://www.telize.com/jsonip").then(function( data ){
+  console.log( "Your IP is ", data.ip );
+}).catch(function( err ){
+  console.error( err );
+});
+// Your IP is 127.0.0.1
+
+</script>
+    </body>
+</html>

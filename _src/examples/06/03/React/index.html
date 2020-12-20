@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+  <script type="text/javascript" src="./js/model/ContactSearch.js"></script>
+  <style>
+    fieldset { border: 0; }
+    .error-msg{ color: red; }
+  </style>
+</head>
+<body>
+  <div data-bind="app"></div>
+<script type="text/jsx">
+  /** @jsx React.DOM */
+
+
+   /** @class {FormView}  */
+var FormView = React.createClass({
+  /** Create an initial state with the model  */
+  getInitialState: function () {
+    return {
+      email: new EmailModel()
+    };
+  },
+  /**
+   * Update state on input change event
+   * @param {String} value - changed value of the input
+   */
+  onChange: function( value ){
+    this.state.email.set( "email", value );
+    this.forceUpdate();
+  },
+  /** Handle form submit */
+  onSubmit: function( e ){
+    e.preventDefault();
+    alert( "Submitting " + this.state.email.get( "email") );
+  },
+  /** Render form */
+  render: function () {
+    return <form onSubmit={this.onSubmit}>
+      <fieldset>
+      <label htmlFor="email">Email:</label>
+      <EmailView model={this.state.email} onChange={this.onChange} />
+      </fieldset>
+      <fieldset>
+        <button data-bind="submitBtn" type="submit">Submit</button>
+      </fieldset>
+    </form>;
+  }
+}),
+
+/** @class {EmailView}  */
+EmailView = React.createClass({
+  /**
+   * Delegate input on-changed event to the from view
+   * @param {Event} e
+   */
+  onChanged: function( e ){
+    this.props.onChange( e.target.value );
+  },
+  /** Render input */
+  render: function () {
+    var model = this.props.model;
+    return <span>
+      <input id="email" type="text" value={model.email} onChange={this.onChanged} />
+      <span className="error-msg" data-bind="errorMsg">
+{model.isValid() ? "" : model.validationError}</span>
+    </span>;
+  }
+});
+
+// render app
+React.render(
+  <FormView />,
+  document.querySelector( "[data-bind=app]" )
+);
+</script>
+</body>
+</html>

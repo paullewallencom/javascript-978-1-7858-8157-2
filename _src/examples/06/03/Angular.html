@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/Angular/1.3.14/angular.min.js"></script>
+  <style>
+    fieldset { border: 0; }
+    .error-msg{ color: red; }
+  </style>
+  <body>
+   <form ng-app="contactSearch" name="csForm" ng-submit="submit()" ng-controller="csController">
+    <fieldset>
+      <label for="email">Email:</label>
+      <input id="email" name="email" ng-model="email" required
+          ng-pattern="/^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$/"  />
+      <span class="error-msg" ng-show="csForm.email.$dirty && csForm.email.$invalid">
+        <span ng-show="csForm.email.$error.required">Email is required.</span>
+        <span ng-show="csForm.email.$error.pattern">Invalid email address.</span>
+      </span>
+    </fieldset>
+    <fieldset>
+      <button type="submit" ng-disabled="csForm.email.$dirty && csForm.email.$invalid">Submit</button>
+    </fieldset>
+  </form>
+<script>
+  "use strict";
+  angular.module( "contactSearch", [] ).controller( "csController", [ "$scope", function ( $scope ){
+    $scope.email = "";
+    $scope.submit = function() {
+      alert( "Submitting " + $scope.email );
+    };
+  }]);
+</script>
+  </body>
+</html>

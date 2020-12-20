@@ -1,0 +1,99 @@
+<style>
+  .x-details-summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .x-details-details {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform-origin: top left;
+  }
+  .x-details-hidden {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+</style>
+<script>
+"use strict";
+    /**
+     * Object constructor representing x-details element
+     * @param {Node} el
+     */
+var DetailsView = function( el ){
+      this.el = el;
+      this.initialize();
+    },
+    // Creates an object based in the HTML Element prototype
+    element = Object.create( HTMLElement.prototype );
+/** @lend DetailsView.prototype */
+Object.assign( DetailsView.prototype, {
+  /**
+   * @constracts DetailsView
+   */
+  initialize: function(){
+    this.summary = this.renderSummary();
+    this.details = this.renderDetails();
+    this.summary.addEventListener( "click", this.onClick.bind( this ), false );
+    this.el.textContent = "";
+    this.el.appendChild( this.summary );
+    this.el.appendChild( this.details );
+  },
+  /**
+   * Render sumary element
+   */
+  renderSummary: function(){
+    var div = document.createElement( "a" );
+    div.className = "x-details-summary";
+    div.textContent = this.el.dataset.summary;
+    return div;
+  },
+  /**
+   * Render details element
+   */
+  renderDetails: function(){
+    var div = document.createElement( "div" );
+    div.className = "x-details-details x-details-hidden";
+    div.textContent = this.el.textContent;
+    return div;
+  },
+  /**
+   * Handle summary on click
+   * @param {Event} e
+   */
+  onClick: function( e ){
+    e.preventDefault();
+    if ( this.details.classList.contains( "x-details-hidden" ) ) {
+      return this.open();
+    }
+    this.close();
+  },
+  /**
+   * Open details
+   */
+  open: function(){
+    this.details.classList.toggle( "x-details-hidden", false );
+  },
+  /**
+   * Close details
+   */
+  close: function(){
+    this.details.classList.toggle( "x-details-hidden", true );
+  }
+});
+
+// Fires when an instance of the element is created
+element.createdCallback = function() {
+  this.detailsView = new DetailsView( this );
+};
+// Expose method open
+element.open = function(){
+  this.detailsView.open();
+};
+// Expose method close
+element.close = function(){
+  this.detailsView.close();
+};
+// Register the custom element
+document.registerElement( "x-details", {
+  prototype: element
+});
+</script>

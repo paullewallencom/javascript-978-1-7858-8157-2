@@ -1,0 +1,19 @@
+<html>
+  <body>
+<script>
+"use strict";
+// Register worker
+var worker = new Worker( "./foo-worker.js" );
+// Subscribe for worker messages
+worker.addEventListener( "message", function( e ) {
+  console.log( "Result: ", e.data );
+}, false );
+console.log( "Starting the task..." );
+// Send a message to worker
+worker.postMessage({
+  command: "loadCpu",
+  value: 2000
+});
+</script>
+  </body>
+</html>

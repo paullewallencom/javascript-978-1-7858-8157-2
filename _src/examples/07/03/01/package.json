@@ -1,0 +1,16 @@
+{
+  "name": "roster",
+  "main": "wwwroot/index.html",
+  "window": {
+    "title": "The Roster",
+    "icon": "wwwroot/roaster.png",
+    "position": "center",
+    "resizable": false,
+    "toolbar": false,
+    "frame": false,
+    "focus": true,
+    "width": 800,
+    "height": 600,
+    "transparent": true
+  }
+}

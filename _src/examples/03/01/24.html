@@ -1,0 +1,10 @@
+<button type="submit">Click me</button>
+
+<script>
+var btn = document.querySelector( "button" );
+    onClick = function( e ){
+      e.preventDefault();
+      console.log( e.target );
+    };
+btn.addEventListener( "click", onClick, false );
+</script>

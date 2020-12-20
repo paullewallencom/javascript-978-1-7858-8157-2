@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>The Roster</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="./js/ngStorage.min.js"></script>
+
+    <script>
+      var win = require( "nw.gui" ).Window.get(),
+          app = angular.module( "myApp", [ "ngStorage" ]);
+
+      win.setTransparent( !win.isTransparent );
+
+      app.controller("ToolbarController", function( $scope ) {
+        $scope.close = function(){
+          win.close();
+        };
+        $scope.minimize = function(){
+          win.minimize();
+        };
+      });
+      app.controller("RosterController", function( $scope, $localStorage ) {
+        var sync = function() {
+          $scope.persons = JSON.parse( $localStorage.persons || "[]" );
+        };
+        sync();
+        $scope.name = "";
+        $scope.submit = function() {
+          sync();
+          $scope.persons.push({ value: $scope.name });
+          $localStorage.persons = JSON.stringify( $scope.persons );
+        };
+        $scope.empty = function() {
+          $localStorage.persons = "[]";
+          sync();
+        };
+      });
+    </script>
+  </head>
+
+  <body ng-app="myApp" >
+      <header ng-controller="ToolbarController">
+        <a href="#" ng-click="minimize()">Minimize</a>
+        <a href="#" ng-click="close()">Close</a>
+      </header>
+
+      <main ng-controller="RosterController">
+        <form ng-submit="submit()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" id="name" name="name" ng-model="name" required placeholder="Name">
+          </div>
+          <button ng-click="empty()" class="btn btn-danger">Empty List</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <table class="table table-condensed">
+          <tr ng-repeat="person in persons">
+            <td>{{person.value}}</td>
+          </tr>
+        </table>
+      </main>
+  </body>
+</html>

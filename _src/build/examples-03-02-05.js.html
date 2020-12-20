@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * Cache driver for ajax module
+ */
+var cache = (function(){
+    var ns = "cache:",
+        /** @constant */
+        EXPIRATION = 10 * 60 * 1000, // 10 min
+        /** Flush all the cached items */
+        flush = function() {
+          var key;
+          for( key in window.sessionStorage ) {
+            if ( key.indexOf( this.ns ) === 0 ) {
+              window.sessionStorage.removeItem( key );
+            }
+          }
+        };
+    window.setInterval( flush, EXPIRATION );
+    return {
+      setItem: function( key, val ){
+        window.sessionStorage.setItem( ns + key, JSON.stringify( val ) );
+      },
+      getItem: function( key ){
+        return JSON.parse( window.sessionStorage.getItem( ns + key ) || null );
+      }
+    };
+  }());</script>
+    </body>
+</html>

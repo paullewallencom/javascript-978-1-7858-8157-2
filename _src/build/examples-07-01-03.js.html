@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * File I/O operations in node.js
+ */
+"use strict";
+var fs = require( "fs" );
+fs.readFile( __filename, "UTF-8", function( err, data ){
+  if ( err ) {
+    throw new Error( err );
+  }
+  console.log( "Source of ", __filename, ":\n", data );
+});</script>
+    </body>
+</html>

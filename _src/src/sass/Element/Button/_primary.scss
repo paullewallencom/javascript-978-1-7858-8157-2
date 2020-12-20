@@ -1,0 +1,19 @@
+.btn-primary {
+	height:3.2rem;
+	line-height:3.2rem - 1.4rem;
+	color: $c-white;
+  background: $c-black;
+  padding: 5px 16px;
+	min-width:7.2rem;
+	font-size:1.2rem;
+	width: 120px;
+  margin: 16px 0;
+  font-weight: bold;
+  border: 1px solid transparent;
+  &:hover, &:visited {
+    color: $c-white;
+  }
+  &:hover {
+    background: $c-dark-grey;
+  }
+}

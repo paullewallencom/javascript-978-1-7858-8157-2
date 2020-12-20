@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+  <script type="text/javascript" src="./js/view/ContactSearch.js"></script>
+  <script type="text/javascript" src="./js/model/ContactSearch.js"></script>
+  <style>
+    fieldset { border: 0; }
+    .error-msg{ color: red; }
+  </style>
+  <body>
+   <form data-bind="csForm">
+    <fieldset>
+      <label for="email">Email:</label>
+      <input id="email" name="email" required />
+      <span class="error-msg" data-bind="errorMsg"></span>
+    </fieldset>
+    <fieldset>
+      <button data-bind="submitBtn" type="submit">Submit</button>
+    </fieldset>
+  </form>
+<script>
+
+// Render foo view
+ new ContactSearchView({
+   el: $( "[data-bind=csForm]" ),
+   model: new ContactSearchModel
+ });
+
+</script>
+  </body>
+</html>

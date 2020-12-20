@@ -1,0 +1,13 @@
+{
+  "jquery": {
+    "path": "./vendors/jQuery/jqueiry.js"
+  },
+  "underscore": {
+    "globalProperty": "_"
+  },
+  "foo": {
+    "path": "./vendors/3rdpartyLib/not-a-module.js",
+    "exports": [ "notAModule" ],
+    "imports": [ "jquery" ]
+  }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * Object.create example
+ */
+"use strict";
+var proto = {
+  bar: "bar",
+  foo: "foo"
+},
+instance = Object.create( proto );
+proto.bar = "qux",
+instance.foo = "baz";
+console.log( instance ); // { foo="baz",  bar="qux"}
+console.log( proto ); // { bar="qux",  foo="foo"}</script>
+    </body>
+</html>

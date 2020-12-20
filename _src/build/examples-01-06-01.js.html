@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ *
+ * Getters and setters
+ */
+"use strict";
+var bar = {
+  /** @type {[Number]} */
+  arr: [ 1, 2 ],
+  /**
+   * Getter
+   * @returns {Number}
+   */
+  get length () {
+    return this.arr.length;
+  },
+  /**
+   * Setter
+   * @param {*} val
+   */
+  set length ( val ) {
+    throw new SyntaxError( "Cannot assign to read only property 'length'" );
+  }
+};
+console.log ( bar.length ); // 2
+bar.arr.push( 3 );
+console.log ( bar.length ); // 3
+bar.length = 10; // SyntaxError: Cannot assign to read only property 'length'
+
+</script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<!-- Modifying external stylesheets -->
+<style type="text/css">
+.foo {
+ color: red;
+}
+</style>
+<div class="foo">foo</div>
+<script type="text/javascript">
+var stylesheet = document.styleSheets[ 0 ];
+stylesheet.cssRules[ 0 ].style.color = "red";
+// or
+// stylesheet.cssRules[ 0 ].style.cssText = "color: red;";
+</script>

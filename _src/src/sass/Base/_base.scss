@@ -1,0 +1,61 @@
+// ---------- Basic Rules for Fonts --------
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+body {
+   margin: 0;
+   font-size: 1.4rem;
+   color: $c-black;
+   background: $c-white;
+   font-family: $font;
+   min-height: 100%;
+}
+
+a, a:visited {
+  color: $c-text;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $c-black;
+}
+
+strong {
+  font-weight:400;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus{
+	outline:none;
+}
+
+fieldset {
+  display: block;
+}
+figure {
+  margin: 0;
+}
+a > img {
+  border: none;
+}
+
+nav {
+  ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+p {
+  line-height: 170%;
+}

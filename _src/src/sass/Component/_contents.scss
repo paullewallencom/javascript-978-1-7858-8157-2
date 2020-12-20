@@ -1,0 +1,28 @@
+.contents {
+  padding: 8px 20px;
+
+  .is-active, .is-active a, .is-active a:visited {
+    color: $c-black;
+    font-weight: bold;
+  }
+
+  > li {
+    font-size: 1.6rem;
+    font-weight: bold;
+    > ul {
+      font-size: 1.4rem;
+      font-weight: normal;
+      padding-top: 6px;
+    }
+    li li {
+      padding: 6px 0;
+      &:hover {
+        background: $c-grey-hover-bg;
+      }
+    }
+    padding: 8px 0;
+  }
+  ul {
+    padding-left: 10px;
+  }
+}

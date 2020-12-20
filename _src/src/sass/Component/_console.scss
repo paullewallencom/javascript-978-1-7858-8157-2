@@ -1,0 +1,12 @@
+.console {
+  > pre {
+    display: block;
+    border-bottom: 1px solid $c-grey-hover;
+    margin: 0;
+    > code  {
+      display: block;
+      line-height: 1.6rem;
+      margin: 7px 0;
+    }
+  }
+}

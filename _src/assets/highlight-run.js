@@ -1,0 +1,1 @@
+window.hljs.highlightBlock( document.querySelector( "pre code" ) );

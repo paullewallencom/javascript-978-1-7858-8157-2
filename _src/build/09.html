@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Console</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/console.css">
+
+    </head>
+    <body>
+      <div data-bind="console" class="console"></div>
+      <script src="../assets/run-env.js"></script>
+      <script>/**
+ * Inheritance in ES6 classes
+ */
+"use strict";
+class AbstractClass {
+  constructor() {
+    this.foo = "foo";
+  }
+}
+class ConcreteClass extends AbstractClass {
+  constructor() {
+    super();
+    this.bar = "bar";
+  }
+  baz() {
+    return "baz";
+  }
+}
+
+let instance = new ConcreteClass();
+console.log( instance.bar ); // bar
+console.log( instance.foo ); // foo
+console.log( instance.baz() ); // baz
+console.log( instance instanceof ConcreteClass ); // true
+console.log( instance instanceof AbstractClass ); // true
+
+</script>
+    </body>
+</html>
